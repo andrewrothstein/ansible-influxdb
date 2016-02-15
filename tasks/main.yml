@@ -12,3 +12,16 @@
 - name: install package...
   package: name=influxdb state=present
 
+- name: configure...
+  template: >-
+    src={{item}}.j2
+    dest=/{{item}}
+    owner=root
+    group=root
+    mode=0644
+  with_items:
+    - etc/influxdb/influxdb.conf
+    - etc/default/influxdb
+
+- name: launch influxdb
+  service: name=influxdb enabled=yes state=started
