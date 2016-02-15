@@ -1,0 +1,17 @@
+---
+- name: install influxdb apt key
+  apt_key: url=https://repos.influxdata.com/influxdb.key state=present
+  register: influxdb_key_added
+
+- name: add influxdb apt-get list
+  template: >-
+    src=etc/apt/sources.list.d/influxdb.list.j2
+    dest=/etc/apt/srouces.list.d/influxdb.list
+    owner=root
+    group=root
+    mode=0644
+    
+- name: apt-get update
+  when: influxdb_key_added|changed
+  apt: update=yes
+
