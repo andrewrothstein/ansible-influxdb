@@ -1,5 +1,5 @@
 ---
 # vars file for ansible-influxdb
-influxdb_key: '{{influxdb_mirror}}/influxdb.key'
-influxdb_rpm_baseurl: '{{influxdb_mirror}}/rhel/\$releasever/\$basearch/stable'
-influxdb_deb_url: '{{influxdb_mirror}}/debian'
+influxdb_tgz: influxdb-{{influxdb_ver}}_{{influxdb_platform}}.tar.gz
+influxdb_tgz_url: '{{influxdb_mirror}}/{{influxdb_tgz}}'
+influxdb_name: influxdb-{{influxdb_ver}}{{influxdb_patch}}

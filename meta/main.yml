@@ -18,5 +18,7 @@ galaxy_info:
     - timeseries
     - database
 
-dependencies: []
+dependencies:
+  - role: andrewrothstein.unarchive-deps
+    version: v1.0.5
   

@@ -1,2 +1,7 @@
 ---
-influxdb_mirror: https://repos.influxdata.com
+influxdb_mirror: https://dl.influxdata.com/influxdb/releases
+influxdb_ver: '1.1.1'
+influxdb_patch: '-1'
+influxdb_platform: linux_amd64
+influxdb_tgz_checksum: md5:ed8977ae3ca4bbc353ec27790d92509a
+influxdb_install_parent_dir: /usr/local
