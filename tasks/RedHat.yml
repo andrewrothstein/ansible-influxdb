@@ -1,12 +1,10 @@
 ---
 - name: install yum.repo
+  become: yes
+  become_user: root
+  with_items:
+    - etc/yum.repos.d/influxdb.repo
   template: >-
-    src=etc/yum.repos.d/influxdb.repo.j2
-    dest=/etc/yum.repos.d/influxdb.repo
-    owner=root
-    group=root
+    src={{item}}.j2
+    dest=/{{item}}
     mode=0644
-
-- name: install package...
-  package: name=influxdb state=present
-

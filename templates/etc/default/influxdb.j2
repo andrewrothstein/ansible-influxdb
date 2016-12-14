@@ -1,3 +1,0 @@
-{% if groups['influxdb'] is defined and inventory_hostname != groups['influxdb'][0] %}
-INFLUXD_OPTS="-join {{hostvars[groups['influxdb'][0]]['ansible_' + influxdb_network_interface]['ipv4']['address']}}:{{influxdb_meta_http_port}}"
-{% endif %}

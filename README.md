@@ -1,7 +1,7 @@
 andrewrothstein.influxdb
 =========
 
-Installs and configures an [influxdb](https://docs.influxdata.com/influxdb/v1.1/) cluster
+Installs [influxdb](https://www.influxdata.com/)
 
 Requirements
 ------------
@@ -21,9 +21,11 @@ See [meta/main.yml](meta/main.yml)
 Example Playbook
 ----------------
 
-    - hosts: servers
-      roles:
-         - andrewrothstein.influxdb
+```yml
+- hosts: servers
+  roles:
+    - andrewrothstein.influxdb
+```
 
 License
 -------
@@ -33,4 +35,4 @@ MIT
 Author Information
 ------------------
 
-Andrew Rothstein andrew.rothstein@gmail.com
+Andrew Rothstein <andrew.rothstein@gmail.com>

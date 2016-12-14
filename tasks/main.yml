@@ -1,6 +1,4 @@
 ---
-# tasks file for ansible-influxdb
-
 - name: Debian install
   when: ansible_os_family == 'Debian'
   include: Debian.yml
@@ -10,18 +8,10 @@
   include: RedHat.yml
 
 - name: install package...
-  package: name=influxdb state=present
-
-- name: configure...
-  template: >-
-    src={{item}}.j2
-    dest=/{{item}}
-    owner=root
-    group=root
-    mode=0644
+  become: yes
+  become_user: root
   with_items:
-    - etc/influxdb/influxdb.conf
-    - etc/default/influxdb
-
-- name: launch influxdb
-  service: name=influxdb enabled=yes state=started
+    - influxdb
+  package: >
+    name={{item}}
+    state=present

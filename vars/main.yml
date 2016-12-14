@@ -1,2 +1,5 @@
 ---
 # vars file for ansible-influxdb
+influxdb_key: '{{influxdb_mirror}}/influxdb.key'
+influxdb_rpm_baseurl: '{{influxdb_mirror}}/rhel/\$releasever/\$basearch/stable'
+influxdb_deb_url: '{{influxdb_mirror}}/debian'
