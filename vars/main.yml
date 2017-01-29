@@ -3,4 +3,4 @@
 influxdb_tgz: influxdb-{{influxdb_ver}}_{{influxdb_platform}}.tar.gz
 influxdb_checksum: '{{influxdb_checksums[influxdb_platform]}}'
 influxdb_tgz_url: '{{influxdb_mirror}}/{{influxdb_tgz}}'
-influxdb_name: influxdb-{{influxdb_ver}}{{influxdb_path}}
+influxdb_name: influxdb-{{influxdb_ver}}{{influxdb_patch}}
