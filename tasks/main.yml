@@ -2,35 +2,35 @@
 - name: download
   become: yes
   become_user: root
-  get_url: >-
-    url={{influxdb_tgz_url}}
-    dest=/tmp/{{influxdb_tgz}}
-    checksum={{influxdb_tgz_checksum}}
+  get_url:
+    url: '{{influxdb_tgz_url}}'
+    dest: /tmp/{{influxdb_tgz}}
+    checksum: '{{influxdb_checksum}}'
 
 - name: unarchive
   become: yes
   become_user: root
-  unarchive: >-
-    copy=no
-    src=/tmp/{{influxdb_tgz}}
-    dest={{influxdb_install_parent_dir}}
-    creates={{influxdb_install_parent_dir}}/{{influxdb_name}}
+  unarchive:
+    copy: no
+    src: /tmp/{{influxdb_tgz}}
+    dest: '{{influxdb_install_parent_dir}}'
+    creates: '{{influxdb_install_parent_dir}}/{{influxdb_name}}'
 
 - name: link
   become: yes
   become_user: root
-  file: >-
-    src={{influxdb_install_parent_dir}}/{{influxdb_name}}
-    dest={{influxdb_install_parent_dir}}/influxdb
-    state=link
+  file:
+    src: '{{influxdb_install_parent_dir}}/{{influxdb_name}}'
+    dest: '{{influxdb_install_parent_dir}}/influxdb'
+    state: link
 
 - name: add to default profile.d
   become: yes
   become_user: root
   with_items:
     - etc/profile.d/influxdb.sh
-  template: >-
-    src={{item}}.j2
-    dest=/{{item}}
-    mode=0644
+  template:
+    src: '{{item}}.j2'
+    dest: /{{item}}
+    mode: '0644'
 
