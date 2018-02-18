@@ -1,5 +1,6 @@
 andrewrothstein.influxdb
 =========
+[![Build Status](https://travis-ci.org/andrewrothstein/ansible-influxdb.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-influxdb)
 
 Installs [influxdb](https://www.influxdata.com/)
 
