@@ -1,17 +1,22 @@
 ---
 influxdb_mirror: https://dl.influxdata.com/influxdb/releases
-influxdb_ver: '1.4.3'
+influxdb_ver: '1.5.0'
 influxdb_platform: linux_amd64
 influxdb_patch: '-1'
+
+# https://portal.influxdata.com/downloads
 influxdb_checksums:
   '1.2.3':
     linux_amd64: md5:f3f2f5ac66110a5314759969648b0fff
     linux_i386: md5:11d5beb35977e36151632ec0816a7e4b
     linux_armhf: md5:12803e7fd2371f59c3ad6e9133ed3e88
-  # https://portal.influxdata.com/downloads
   '1.4.3':
     linux_amd64: sha256:abece3774e01e5507db2b696c0b922bea7d74eb857539598a970dd03c48c092c
     linux_i386: sha256:718072573052cdccbaa9bce8096b6f371554b4d697b539b517236f208763ded6
     linux_armhf: sha256:58113a69700dafed9e1ce2fa03709ba9d7c0a27b761afb5db1431f39bd898999
+  '1.5.0':
+    linux_amd64: sha256:e50206fc7fecb78c69f2214fef8786305fe53a16806c0c704faa25fc04aaddb8
+    linux_i386: 1f28b15aa1c056ab703bd4a72c4d3428d8b8bd2b47318f6d1f7f605ecff5f3b3
+    linux_armhf: ddf3c90a49051fd921b9acda716d959ebdb2c309221caec413d3159e604d0c92
   
 influxdb_install_parent_dir: /usr/local
