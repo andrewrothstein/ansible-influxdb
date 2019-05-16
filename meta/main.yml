@@ -1,29 +1,26 @@
----
+dependencies:
+- role: andrewrothstein.unarchive-deps
+  version: v1.0.12
 galaxy_info:
   author: Andrew Rothstein
-  description: role to install influxdb
   company: BlackRock
+  description: role to install influxdb
+  galaxy_tags:
+  - timeseries
+  - database
   license:
-    - MIT
+  - MIT
   min_ansible_version: 2.0
   platforms:
-    - name: EL
-      versions:
-        - all
-    - name: Fedora
-      versions:
-        - all
-    - name: Ubuntu
-      versions:
-        - xenial
-    - name: Alpine
-      versions:
-        - all
-
-  galaxy_tags:
-    - timeseries
-    - database
-
-dependencies:
-  - role: andrewrothstein.unarchive-deps
-    version: v1.0.10
+  - name: EL
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - xenial
+  - name: Alpine
+    versions:
+    - all
