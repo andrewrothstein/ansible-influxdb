@@ -1,6 +1,6 @@
 ---
 influxdb_mirror: https://dl.influxdata.com/influxdb/releases
-influxdb_ver: '1.5.2'
+influxdb_ver: '1.7.6'
 influxdb_platform: linux_amd64
 influxdb_patch: '-1'
 
@@ -28,5 +28,10 @@ influxdb_checksums:
     linux_i386: sha256:ac50cd165d046c4701750d8377577242be66f8dce98fdb6d450a0f006efc7546
     linux_armfh: sha256:92ea498500be65ba5414aba29a6e76075e06e556ff1a9e9d8186fd69c201ba21
     windows_amd64: sha256:ff47d32aa913346a8007d53ae106dbff2d1de3eee9f2861eb239370cc7ab7af3
-    
+  '1.7.6':
+    linux_amd64: sha256:8a292b2aaeec3be2b226e3c56ef63f74306371bf5b2f5c407e1e9db24bec4055
+    linux_i386: sha256:97da94eea84b35822cb945c138fe954d7b95f67513212a5968b6db2b398e1290
+    linux_armfh: sha256:da91cfe29298e69b761701280ee5fa910c25c223e0b2f3d7070638c315691050
+    windows_amd64: sha256:64378374336064f3b62ef80a4c51592ec59a871535d91ccfb670fffe1a47da23
+
 influxdb_install_parent_dir: /usr/local
