@@ -1,8 +1,11 @@
 ---
 influxdb_mirror: https://dl.influxdata.com/influxdb/releases
-influxdb_ver: '1.7.6'
-influxdb_platform: linux_amd64
+influxdb_ver: '1.7.9'
+influxdb_os: linux
+influxdb_arch: amd64
 influxdb_patch: '-1'
+
+influxdb_install_parent_dir: /usr/local
 
 # https://portal.influxdata.com/downloads
 influxdb_checksums:
@@ -33,5 +36,12 @@ influxdb_checksums:
     linux_i386: sha256:97da94eea84b35822cb945c138fe954d7b95f67513212a5968b6db2b398e1290
     linux_armfh: sha256:da91cfe29298e69b761701280ee5fa910c25c223e0b2f3d7070638c315691050
     windows_amd64: sha256:64378374336064f3b62ef80a4c51592ec59a871535d91ccfb670fffe1a47da23
-
-influxdb_install_parent_dir: /usr/local
+  '1.7.9':
+    # https://dl.influxdata.com/influxdb/releases/influxdb-1.7.9_linux_amd64.tar.gz
+    'linux_amd64': sha256:8f7db67bc966815acee81799b5b2db200686f9315acf3dfb3486bd183ec13d35
+    # https://dl.influxdata.com/influxdb/releases/influxdb-1.7.9_linux_i386.tar.gz
+    'linux_i386': sha256:abf572f3eb32fd8aecd202fa90c0ec49173ceface710db09fd34ca68c1eba014
+    # https://dl.influxdata.com/influxdb/releases/influxdb-1.7.9_linux_armhf.tar.gz
+    'linux_armhf': sha256:c3f87938f8349649bf51db0a23683c06515548f6a84a9bcf0068a095e539e99e
+    # https://dl.influxdata.com/influxdb/releases/influxdb-1.7.9_windows_amd64.zip
+    'windows_amd64': sha256:d0d39b9614abd2cec78e53f7527b5aa635e83bb2404063820edc85871e348619
