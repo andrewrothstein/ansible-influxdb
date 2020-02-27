@@ -106,7 +106,6 @@
             - zone=1c
           templates:
             - '*.app env.service.resource.measurement'
-            - 'server.*'
         collectd:
           enabled: false
           bind_address: ':25826'
