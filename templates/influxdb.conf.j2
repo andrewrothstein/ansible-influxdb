@@ -714,7 +714,7 @@ bind-address = {{ influxdb_config.bind_address | to_json }}
   # Number of batches that may be pending in memory
   batch-pending = {{ influxdb_config.udp.batch_pending | to_json }}
 {% endif %}
-{% if 'batch_timeout' in influxdb_config.udp.batch_timeout | to_json }}
+{% if 'batch_timeout' in influxdb_config.udp.batch_timeout %}
   # Will flush at least this often even if we havent hit buffer limit
   batch-timeout = {{ influxdb_config.udp.batch_timeout | to_json }}
 {% endif %}
