@@ -8,3 +8,5 @@ influxdb_name: influxdb-{{ influxdb_ver }}{{ influxdb_patch }}
 
 influxdb_install_dir: '{{ influxdb_install_parent_dir }}/{{ influxdb_name }}'
 influxdb_link_dir: '{{ influxdb_install_parent_dir  }}/influxdb'
+
+influxdb_conf_dir: '{{ influxdb_install_dir }}/etc/influxdb'

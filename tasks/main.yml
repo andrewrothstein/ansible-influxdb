@@ -48,3 +48,5 @@
     src: '{{ item.f }}.j2'
     dest: '{{ item.d }}/{{ item.f }}'
     mode: '{{ item.m|default("0644") }}'
+- when: influxdb_config is defined
+  include_tasks: configure.yml
