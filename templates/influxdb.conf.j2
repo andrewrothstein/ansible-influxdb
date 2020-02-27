@@ -76,7 +76,7 @@ bind-address = {{ influxdb_config.bind_address | to_json }}
 {% if 'trace_logging_enabled' in influxdb_config.data %}
   # Trace logging provides more verbose output around the tsm engine. Turning
   # this on can provide more useful output for debugging tsm engine issues.
-  trace-logging-enabled = {{ influxdb_config.data.trace_logging_enabled | to_json %}
+  trace-logging-enabled = {{ influxdb_config.data.trace_logging_enabled | to_json }}
 {% endif %}
 
 {% if 'query_log_enabled' in influxdb_config.data %}
@@ -109,12 +109,12 @@ bind-address = {{ influxdb_config.bind_address | to_json }}
 {% if 'cache_snapshot_write_cold_duration' in influxdb_config.data %}
   # CacheSnapshotWriteColdDuration is the length of time at
   # which the engine will snapshot the cache and write it to
-  # a new TSM file if the shard hasn't received writes or deletes
+  # a new TSM file if the shard hasnt received writes or deletes
   cache-snapshot-write-cold-duration = {{ influxdb_config.data.cache_snapshot_write_cold_duration | to_json }}
 {% endif %}
 {% if 'compact_full_write_cold_duration' in influxdb_config.data %}
   # CompactFullWriteColdDuration is the duration at which the engine
-  # will compact all TSM files in a shard if it hasn't received a
+  # will compact all TSM files in a shard if it hasnt received a
   # write or delete
   compact-full-write-cold-duration = {{ influxdb_config.data.compact_full_write_cold_duration | to_json }}
 {% endif %}
@@ -226,6 +226,7 @@ bind-address = {{ influxdb_config.bind_address | to_json }}
   max-select-buckets = {{ influxdb_config.coordinator.max_select_buckets | to_json }}
 {% endif %}
 {% endif %}
+
 {% if 'retention' in influxdb_config %}
 ###
 ### [retention]
@@ -240,6 +241,7 @@ bind-address = {{ influxdb_config.bind_address | to_json }}
 {% if 'check_interval' in influxdb_config.retention %}
   # The interval of time when retention policy enforcement checks run.
   check-interval = {{ influxdb_config.retention.check_interval | to_json }}
+{% endif %}
 {% endif %}
 
 {% if 'shard_precreation' in influxdb_config %}
@@ -266,6 +268,7 @@ bind-address = {{ influxdb_config.bind_address | to_json }}
   advance-period = {{ influxdb_config.shard_precreation.advance_period | to_json }}
 {% endif %}
 {% endif %}
+
 {% if 'monitor' in influxdb_config %}
 ###
 ### Controls the system self-monitoring, statistics and diagnostics.
@@ -290,6 +293,7 @@ bind-address = {{ influxdb_config.bind_address | to_json }}
   store-interval = {{ influxdb_config.monitor.store_interval | to_json }}
 {% endif %}
 {% endif %}
+
 {% if 'http' in influxdb_config %}
 ###
 ### [http]
@@ -425,6 +429,7 @@ bind-address = {{ influxdb_config.bind_address | to_json }}
   enqueued-write-timeout = {{ influxdb_config.http.enqueued_write_timeout | to_json }}
 {% endif %}
 {% endif %}
+
 {% if 'logging' in influxdb_config %}
 ###
 ### [logging]
@@ -453,6 +458,7 @@ bind-address = {{ influxdb_config.bind_address | to_json }}
   suppress-logo = {{ influxdb_config.logging.suppress_logo | to_json }}
 {% endif %}
 {% endif %}
+
 {% if 'subscriber' in influxdb_config %}
 ###
 ### [subscriber]
@@ -488,6 +494,7 @@ bind-address = {{ influxdb_config.bind_address | to_json }}
   write-buffer-size = {{ influxdb_config.subscriber.write_buffer_size | to_json }}
 {% endif %}
 {% endif %}
+
 {% if 'graphite' in influxdb_config %}
 ###
 ### [[graphite]]
@@ -552,6 +559,7 @@ bind-address = {{ influxdb_config.bind_address | to_json }}
   templates = {{ influxdb_config.graphite.templates | to_json }}
 {% endif %}
 {% endif %}
+
 {% if 'collectd' in influxdb_config %}
 ###
 ### [collectd]
@@ -615,6 +623,7 @@ bind-address = {{ influxdb_config.bind_address | to_json }}
   parse-multivalue-plugin = {{ influxdb_config.collectd.parse_multivalue_plugin | to_json }}
 {% endif %}
 {% endif %}
+
 {% if 'opentsdb' in influxdb_config %}
 ###
 ### [opentsdb]
@@ -667,6 +676,7 @@ bind-address = {{ influxdb_config.bind_address | to_json }}
   batch-timeout = {{ influxdb_config.opentsdb.batch_timeout | to_json }}
 {% endif %}
 {% endif %}
+
 {% if 'udp' in influxdb_config %}
 ###
 ### [[udp]]
@@ -712,6 +722,7 @@ bind-address = {{ influxdb_config.bind_address | to_json }}
   read-buffer = {{ influxdb_config.udp.read_buffer | to_json }}
 {% endif %}
 {% endif %}
+
 {% if 'continuous_queries' in influxdb_config %}
 ###
 ### [continuous_queries]
@@ -737,6 +748,7 @@ bind-address = {{ influxdb_config.bind_address | to_json }}
   run-interval = {{ influxdb_config.continuous_queries.run_interval | to_json }}
 {% endif %}
 {% endif %}
+
 {% if 'tls' in influxdb_config %}
 ###
 ### [tls]
