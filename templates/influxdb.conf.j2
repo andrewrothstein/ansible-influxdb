@@ -665,6 +665,7 @@ bind-address = {{ influxdb_config.bind_address | to_json }}
 {% if 'batch_size' in influxdb_config.opentsdb %}
   # Flush if this many points get buffered
   batch-size = {{ influxdb_config.opentsdb.batch_size | to_json }}
+{% endif %}
 
 {% if 'batch_pending' in influxdb_config.opentsdb %}
   # Number of batches that may be pending in memory
