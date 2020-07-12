@@ -90,3 +90,12 @@ influxdb_checksums:
     linux_armhf: sha256:fdac157f02e8231e1925d8e9bc325c88b7ba55ebab2340c549ef10640dbd0cba
     # https://dl.influxdata.com/influxdb/releases/influxdb-1.8.0_windows_amd64.zip
     windows_amd64: sha256:77d954dd8dcd3ca7b312913fc670b14c0cfb2bd3b171f105fae2f451c9518752
+  '1.8.1':
+    # https://dl.influxdata.com/influxdb/releases/influxdb-1.8.1_linux_amd64.tar.gz
+    linux_amd64: sha256:4d1acf1c1a95bc42384e3fa7f2dc1d37ad75e0b383dab924c0826e46bd428423
+    # https://dl.influxdata.com/influxdb/releases/influxdb-1.8.1_linux_i386.tar.gz
+    linux_i386: sha256:48f01bf1b8575348653e331065c6271b73bd261bbcbb94d40b7f56e90e84d06b
+    # https://dl.influxdata.com/influxdb/releases/influxdb-1.8.1_linux_armhf.tar.gz
+    linux_armhf: sha256:70db96ca7950021bfb3df89d1614c656b5c63acee70239d7b57a350841d3763f
+    # https://dl.influxdata.com/influxdb/releases/influxdb-1.8.1_windows_amd64.zip
+    windows_amd64: sha256:0144bea73498b1dce2e1760832a201e1294a53c4562350b704787c54cf683cea
