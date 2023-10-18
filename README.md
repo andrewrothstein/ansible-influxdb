@@ -1,6 +1,6 @@
 andrewrothstein.influxdb
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-influxdb.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-influxdb)
+![Build Status](https://github.com/andrewrothstein/ansible-influxdb/actions/workflows/build.yml/badge.svg)
 
 Installs [influxdb](https://www.influxdata.com/)
 

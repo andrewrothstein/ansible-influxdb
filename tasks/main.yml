@@ -1,37 +1,40 @@
 ---
-- name: check for installation...
-  become: yes
+- include_role:
+    name: andrewrothstein.unarchivedeps
+- name: checking for installation at {{ influxdb_install_dir }}
+  become: true
   become_user: root
   stat:
     path: '{{ influxdb_install_dir }}'
-  changed_when: False
+  changed_when: false
   register: influxdb_binary
 - when: not influxdb_binary.stat.exists
   block:
-    - name: download
-      become: yes
+    - name: downloading {{ influxdb_tgz_url }} to {{ influxdb_tmp_tgz }}
+      become: true
       become_user: root
       get_url:
         url: '{{ influxdb_tgz_url }}'
-        dest: /tmp/{{ influxdb_tgz }}
+        dest: '{{ influxdb_tmp_tgz }}'
         checksum: '{{ influxdb_checksum }}'
-    - name: unarchive
-      become: yes
+        mode: 0644
+    - name: unarchiving {{ influxdb_tmp_tgz }}
+      become: true
       become_user: root
       unarchive:
-        remote_src: yes
-        src: /tmp/{{ influxdb_tgz }}
+        remote_src: true
+        src: '{{ influxdb_tmp_tgz }}'
         dest: '{{ influxdb_install_parent_dir }}'
         creates: '{{ influxdb_install_dir }}'
   always:
-    - name: cleanup...
-      become: yes
+    - name: rm {{ influxdb_tmp_tgz }}
+      become: true
       become_user: root
       file:
-        path: /tmp/{{ influxdb_tgz }}
+        path: '{{ influxdb_tmp_tgz }}'
         state: absent
-- name: link
-  become: yes
+- name: linking {{ influxdb_link_dir }} to {{ influxdb_install_dir }}
+  become: true
   become_user: root
   file:
     src: '{{ influxdb_install_dir }}'
@@ -39,7 +42,7 @@
     state: link
 
 - name: add to default profile.d
-  become: yes
+  become: true
   become_user: root
   with_items:
     - f: influxdb.sh
