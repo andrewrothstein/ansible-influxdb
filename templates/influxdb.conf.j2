@@ -513,7 +513,7 @@ bind-address = {{ influxdb_config.bind_address | to_json }}
 {% if 'retention_policy' in influxdb_config.graphite %}
   retention-policy = {{ influxdb_config.graphite.retention_policy | to_json }}
 {% endif %}
-{% if 'bind_address' in influxdb_config.graphite.bind_address %}
+{% if 'bind_address' in influxdb_config.graphite %}
   bind-address = {{ influxdb_config.graphite.bind_address | to_json }}
 {% endif %}
 {% if 'protocol' in influxdb_config.graphite %}
@@ -714,7 +714,7 @@ bind-address = {{ influxdb_config.bind_address | to_json }}
   # Number of batches that may be pending in memory
   batch-pending = {{ influxdb_config.udp.batch_pending | to_json }}
 {% endif %}
-{% if 'batch_timeout' in influxdb_config.udp.batch_timeout %}
+{% if 'batch_timeout' in influxdb_config.udp %}
   # Will flush at least this often even if we havent hit buffer limit
   batch-timeout = {{ influxdb_config.udp.batch_timeout | to_json }}
 {% endif %}
