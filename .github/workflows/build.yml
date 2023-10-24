@@ -34,4 +34,4 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        dist: ${{ fromJSON(needs.prepare-matrix.outputs.dist }}
+        dist: ${{ fromJSON(needs.prepare-matrix.outputs.dist) }}
