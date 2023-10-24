@@ -15,7 +15,7 @@ jobs:
       - uses: docker/bake-action@v3
         env:
           UPSTREAM_TAG: "0.0.0-${{ matrix.dist.OS }}.${{ matrix.dist.OS_VER }}"
-          TARGET_SLUG: "${{ env.GITHUB_REPOSITORY }}"
+          TARGET_SLUG: "${{ github.repository }}"
           TARGET_TAG: "0.0.0-${{ matrix.dist.OS }}.${{ matrix.dist.OS_VER }}"
           SHA: "{{ env.GITHUB_SHA }}"
         with:
