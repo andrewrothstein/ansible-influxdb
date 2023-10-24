@@ -8,7 +8,10 @@ jobs:
     steps:
       - name: read matrix.json
         id: read-matrix
-        run: cat matrix.json >> $GITHUB_OUTPUT
+        run: |
+          pwd
+          ls -l
+          cat matrix.json >> $GITHUB_OUTPUT
   build:
     runs-on: ubuntu-latest
     needs: [prepare-matrix]
