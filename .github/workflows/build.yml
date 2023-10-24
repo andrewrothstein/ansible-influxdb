@@ -17,7 +17,7 @@ jobs:
           UPSTREAM_TAG: "0.0.0-${{ matrix.dist.OS }}.${{ matrix.dist.OS_VER }}"
           TARGET_SLUG: "${{ github.repository }}"
           TARGET_TAG: "0.0.0-${{ matrix.dist.OS }}.${{ matrix.dist.OS_VER }}"
-          SHA: "{{ env.GITHUB_SHA }}"
+          SHA: "${{ github.sha }}"
         with:
           pull: true
           push: true
