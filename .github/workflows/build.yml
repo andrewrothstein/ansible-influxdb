@@ -4,12 +4,12 @@ jobs:
   prepare-matrix:
     runs-on: ubuntu-latest
     outputs:
-      dist: ${{ steps.read-matrix.outputs }}
+      dist: ${{ steps.read-matrix.outputs.dist }}
     steps:
       - uses: actions/checkout@v3
       - name: read matrix.json
         id: read-matrix
-        run: jq '@json' < matrix.json >> $GITHUB_OUTPUT
+        run: echo "dist=\'$(jq -r '@json' < matrix.json)\'" >> $GITHUB_OUTPUT
   build:
     runs-on: ubuntu-latest
     needs: [prepare-matrix]
